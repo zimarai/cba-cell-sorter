@@ -14,7 +14,8 @@ return [
     */
 
     'paths' => [
-        resource_path('views'),
+        resource_path('frontend/views'), //acá va auth
+        resource_path('backend/views')
     ],
 
     /*
