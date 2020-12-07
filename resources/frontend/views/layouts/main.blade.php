@@ -14,16 +14,18 @@
 
     <!-- Fonts -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons|Material+Icons+Outlined"
         rel="stylesheet" />
-    
-    <link href="{{ asset('css/material-kit.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
 </head>
 
 <body class="{{ $body_class ?? '' }} sidebar-collapse">
     <!-- NAVBAR -->
-    <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg bg-primary" color-on-scroll="100"
-        id="sectionsNav">
+    {{-- <nav class="navbar navbar-cba fixed-top navbar-expand-lg"> --}}
+    <nav class="navbar navbar-color-on-scroll navbar-transparent navbar-cba fixed-top navbar-expand-lg"
+        color-on-scroll="100" id="sectionsNav">
+        {{-- <nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav"> --}}
         <div class="container">
             <div class="navbar-translate">
                 <a class="navbar-brand" href="/">
@@ -43,26 +45,27 @@
                             <a class="nav-link" href="{{ route('login') }}">Revisar mis reservas</a>
                         </li>
                         @if(Route::has('register'))
-                        
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-white btn-raised btn-round " style="color:grey" href="#">
-                            <i class="material-icons">timer</i> Agendar</a>
-                        </li>
-                        {{--
+
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-white btn-raised btn-round " style="color:grey"
+                                    href="agendar">
+                                    <i class="material-icons">timer</i> Agendar</a>
+                            </li>
+                            {{--
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">
-                                <i class="material-icons">account_circle</i>Registrarme</a>
+                            <i class="material-icons">account_circle</i>Registrarme</a>
                             </li>
-                        --}}
+                            --}}
                         @endif
                     @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}"><i
-                                class="material-icons">user</i> {{ Auth::user()->name }}</a>
+                                    class="material-icons">user</i> {{ Auth::user()->name }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('logout') }}" 
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <a class="nav-link" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="material-icons">key</i> Cerrar sesión</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                 class="d-none">
@@ -79,26 +82,26 @@
     @yield('page')
 
     <footer class="footer" data-background-color="black">
-    <div class="container">
-      <nav class="">
-        <ul>
-          <li>
-            <a href="https://www.creative-tim.com/presentation">
-              CBA Usach
-            </a>
-          </li>
-        </ul>
-      </nav>
-  </footer>
-
-    <!--span>Photo by Jeremy Bishop on <a href="https://unsplash.com/s/photos/abstract?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span-->
-    
-    <script src="{{ asset('js/material-kit/core/jquery.min.js') }}"  defer></script>
-    <script src="{{ asset('js/material-kit/core/popper.min.js') }}"  defer></script>
-    <script src="{{ asset('js/material-kit/core/bootstrap-material-design.min.js') }}"  defer></script>
+        <div class="container">
+            <nav class="">
+                <ul>
+                    <li>
+                        <a href="https://cba.usach.cl">
+                            CBA Usach
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+    </footer>
+    <!-- TODO: Include this in webpack and take the files from node modules -->
+    <script src="{{ asset('js/material-kit/core/jquery.min.js') }}" defer></script>
+    <script src="{{ asset('js/material-kit/core/popper.min.js') }}" defer></script>
+    <script src="{{ asset('js/material-kit/core/bootstrap-material-design.min.js') }}" defer>
+    </script>
     <script src="{{ asset('js/material-kit/plugins/moment.min.js') }}" defer></script>
-    <script src="{{ asset('js/material-kit/plugins/bootstrap-datetimepicker.js') }}"  defer></script>
-    <script src="{{ asset('js/material-kit/plugins/nouislider.min.js') }}"  defer></script>
+    <script src="{{ asset('js/material-kit/plugins/bootstrap-datetimepicker.js') }}" defer>
+    </script>
+    <script src="{{ asset('js/material-kit/plugins/nouislider.min.js') }}" defer></script>
     <script src="{{ asset('js/material-kit.js') }}" defer></script>
 
     @yield('custom_footer')

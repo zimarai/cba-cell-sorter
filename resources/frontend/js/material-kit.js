@@ -106,6 +106,7 @@ materialKit = {
 
   initFormExtendedDatetimepickers: function() {
     $('.datetimepicker').datetimepicker({
+      format: "DD-MM-YYYY",
       icons: {
         time: "fa fa-clock-o",
         date: "fa fa-calendar",

@@ -2,61 +2,64 @@
 
 @section('page')
 <div class="page-header"
-  style="background-image: url('img/geo-bg.jpg'); background-size: cover; background-position: top center;">
+  {{--style="background-image: url('img/geo-bg.jpg'); background-size: cover; background-position: top center;"--}}>
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-8">
+      <div class="col-md-4 col-sm-6">
         <div class="card">
+        <div class="card-header card-header-primary text-center">
+                  <h4 class="card-title">CBA USACH Cell Sorter</h4>
+                  <p>Ingresa tu correo y contraseña</p>
+                </div>
           <div class="card-body">
             <form method="POST" action="{{ route('login') }}">
               @csrf
-              <div class="form-group row">
-                <label for="email" class="col-md-4 col-form-label text-md-right">
-                  Correo electrónico
-                </label>
-                <div class="col-md-6">
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="material-icons">face</i>
-                      </span>
+              <div class="row">
+                <div class="col-sm-10 offset-sm-1">
+                    <div class="form-group label-floating is-empty">
+                        <label class="control-label">E-mail</label>
+                        <div class="input-group">
+                            <input id="test-me" type="email"
+                            class="form-control @error('email') is-invalid @enderror" name="email"
+                            value="{{ old('email') }}" required>
+                        </div>
+                        <span class="material-input">
+                            @error('email')
+                                <strong>{{ $message }}</strong>
+                            @enderror
+                        </span>
                     </div>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                      name="email" value="{{ old('email') }}" placeholder="Email..." required
-                      autocomplete="email" autofocus>
-                    @error('email')
-                      <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                      </span>
-                    @enderror
+                
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-10 offset-sm-1">
+                      <div class="form-group label-floating is-empty">
+                        <label class="control-label">Contraseña</label>
+
+                        <div class="input-group">
+                          <input id="password" type="password"
+                          class="form-control @error('password') is-invalid @enderror" name="password" required
+                          autocomplete="current-password">
+                        </div>
+                        <span class="material-input">
+                        @error('password')
+                            <strong>{{ $message }}</strong>
+              
+                        @enderror
+                        </span>
+                    </div>
                   </div>
+              </div>
+              <div class="form-group row mb-0">
+                <div class="col-md-12 text-center">
+                  <button type="submit" class="btn btn-primary">
+                    Ingresar
+                  </button>
                 </div>
               </div>
               <div class="form-group row">
-                <label for="password" class="col-md-4 col-form-label text-md-right">
-                  Contraseña
-                </label>
-                <div class="col-md-6">
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="material-icons">lock_outline</i>
-                      </span>
-                    </div>
-                    <input id="password" type="password" placeholder="Contraseña..."
-                      class="form-control @error('password') is-invalid @enderror" name="password" required
-                      autocomplete="current-password">
-                    @error('password')
-                      <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                      </span>
-                    @enderror
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-md-6 offset-md-4">
-                  <div class="form-check">
+                <div class="col-md-12 text-center">
                     <label class="form-check-label">
                       <input class="form-check-input" type="checkbox" name="remember" id="remember"
                         {{ old('remember') ? 'checked' : '' }}>
@@ -65,21 +68,16 @@
                         <span class="check"></span>
                       </span>
                     </label>
-                  </div>
+                    {{--TODO: Enable password recovery link 
+                    @if(Route::has('password.request'))
+                      <a class="btn btn-link" href="{{ route('password.request') }}">
+                        ¿Olvidaste tu contraseña?
+                      </a>
+                    @endif
+                    --}}
                 </div>
               </div>
-              <div class="form-group row mb-0">
-                <div class="col-md-8 offset-md-4">
-                  <button type="submit" class="btn btn-primary">
-                    Ingresar
-                  </button>
-                  @if(Route::has('password.request'))
-                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                      ¿Olvidaste tu contraseña?
-                    </a>
-                  @endif
-                </div>
-              </div>
+              
             </form>
           </div>
         </div>

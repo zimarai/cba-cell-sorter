@@ -2,7 +2,7 @@
 
 @section('page')
 <div class="page-header"
-  style="background-image: url('img/geo-bg.jpg'); background-size: cover; background-position: top center;">
+  {{--style="background-image: url('img/geo-bg.jpg'); background-size: cover; background-position: top center;"--}}>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8">
