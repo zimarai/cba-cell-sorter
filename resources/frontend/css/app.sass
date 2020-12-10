@@ -1,0 +1,47 @@
+@import "material-kit"
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+  /*-webkit-box-shadow: 0 1px 0px 1000px #ffffff inset !important*/ /*Este método produce un parpadeo*/
+  border-bottom: 1px solid lightgrey
+  border-bottom-style: inset
+  -webkit-transition: all 5000s ease-in-out 0s !important
+
+.navbar
+  background-color: $secondary !important
+  color: white
+  box-shadow: none !important
+
+.navbar.navbar-transparent
+  color: $text !important
+  padding-top: 0.625rem
+
+.index-page
+  .page-header
+    background-size: 20%
+    background-position: 25% center
+    width: 100%
+    background-repeat: no-repeat
+    background-color: white
+    margin-top: 72px
+    border-top: 5px solid lighten($primary, 20)
+    .brand
+      color: $tertiary
+
+.features-row
+  .material-icons
+    font-size: 48px
+    &.first
+      color: $primary
+    &.second
+      color: $tertiary
+    &.third
+      color: $quaternary
+.section.agenda-home
+  padding: 0
+.card
+  .card-header-primary
+    background: linear-gradient(180deg, darken($primary, 15), $primary)
