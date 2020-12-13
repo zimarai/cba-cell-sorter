@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password'
     ];
 
     /**
@@ -34,6 +34,22 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'email_verified_at' => 'datetime'
     ];
+
+    /* TODO: Append appointments to user on creation
+    protected $dispatchesEvents = [
+        'saved' => AppointmentSaved::class,
+        'updated' => AppointmentUpdated::class,
+    ];
+    */
+
+    /**
+     * Get the appointments for the user.
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Appointment');
+    }
+
 }

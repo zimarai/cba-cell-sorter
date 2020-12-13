@@ -17,7 +17,9 @@
     <link
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons|Material+Icons+Outlined"
         rel="stylesheet" />
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+
 </head>
 
 <body class="{{ $body_class ?? '' }} sidebar-collapse">

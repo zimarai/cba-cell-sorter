@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'SiteController@index')->name('inicio');
 Route::get('/admin', 'BackendController@index')->name('admin');
 Route::get('/agendar', 'AppointmentController@create')->name('agendar');
+Route::post('/agendar', 'AppointmentController@store');
 
 Auth::routes();
 
