@@ -15,6 +15,8 @@
 
  */
 
+const { now } = require("lodash");
+
 var big_image;
 
 $(document).ready(function() {
@@ -103,10 +105,14 @@ materialKit = {
     navbar_initialized: false,
     isWindow: document.documentMode || /Edge/.test(navigator.userAgent)
   },
-
   initFormExtendedDatetimepickers: function() {
     $('.datetimepicker').datetimepicker({
       format: "DD-MM-YYYY",
+      defaultDate: new Date().toJSON().slice(0,10),
+      minDate: 1,
+      locale: 'es',
+      //startView: 1,
+      daysOfWeekDisabled: [0, 6],
       icons: {
         time: "fa fa-clock-o",
         date: "fa fa-calendar",

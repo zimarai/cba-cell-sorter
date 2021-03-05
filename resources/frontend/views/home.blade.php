@@ -5,12 +5,11 @@
   style="background-image: url('{{ asset('img/bc-facsmelody-hands.png') }}');">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 offset-md-5">
+      <div class="col-md-7 offset-md-4">
         <div class="brand text-left">
           <img src="{{ asset('img/cba-logo.png') }}" style="max-width:400px">
           <h1>Cell Sorter</h1>
-          <h3>CBA Usach pone a disposición Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
-            laboriosam, nisi ut aliquid ex ea commodi consequatur.</h3>
+          <h3>CBA Usach pone a disposición el servicio de cell sorting mediante un Cell Sorter BD FACSMelody. El equipo cuenta con 3 láser (488 nm, 640 nm y 405 nm) y detectores para 9 colores de fluorescencia. Este equipo permite la separación celular con una alta pureza de manera rápida y eficiente. </h3>
         </div>
       </div>
     </div>
@@ -18,7 +17,6 @@
 </div>
 <div class="container">
   <div class="row features-row">
-
     <div class="col-md-4 mx-auto text-center">
       <div class="card">
         <div class="card-body">
@@ -57,7 +55,6 @@
     </div>
   </div>
 </div>
-
 <div class="main">
   <div class="section agenda-home">
     <div class="container">
@@ -67,8 +64,7 @@
         </div>
         <div class="col-md-8 mx-auto">
           <h3>Agenda horas para utilizar el equipo Cell Sorter</h3>
-          <h5>Existen dos jornadas, en la mañana y a media tarde. Nemo enim ipsam voluptatem quia voluptas sit
-            aspernatur aut odit aut fugit.</h5>
+          <h5>Existen dos jornadas, en la mañana y a media tarde. Las reservas podrán efectuarse hasta con 24 horas de anticipación. En caso de consultas sobre su reserva o su experimento, favor contactarnos a sorter.cba@usach.cl o llamar al +562 27183448.</h5>
           <p>
             <i class="material-icons-outlined" style="float: left;margin-right: 10px;">wb_sunny</i> Jornada de la
             mañana: 09:30 a 13:00 hrs.</p>
@@ -81,8 +77,6 @@
       </div>
     </div>
   </div>
-
-
 </div>
 <!-- Classic Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
@@ -110,16 +104,12 @@
     </div>
   </div>
 </div>
-
 @endsection
-
 @section('custom_footer')
-
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     materialKit.initFormExtendedDatetimepickers();
   });
-
   function scrollToDownload() {
     if ($('.section-download').length != 0) {
       $("html, body").animate({
@@ -128,5 +118,4 @@
     }
   }
 </script>
-
 @endsection

@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 use App\User;
 use App\Appointment;
 use App\Http\Requests\StoreAppointment;
+use App\Mail\AppointmentRequested;
+use Illuminate\Support\Facades\Mail;
 
 class AppointmentController extends Controller
 {
@@ -36,6 +38,8 @@ class AppointmentController extends Controller
         $appointment->reservation_code =    $reservation_code;
         $appointment->attendant_user_id =   $user->id ?? null;
         $appointment->save();
+
+        Mail::to($appointment->attendant_email)->send(new AppointmentRequested($appointment));
 
         return view('appointment.success', compact('appointment'));
        // }
