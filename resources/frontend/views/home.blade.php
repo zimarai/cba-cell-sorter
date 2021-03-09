@@ -5,11 +5,11 @@
   style="background-image: url('{{ asset('img/bc-facsmelody-hands.png') }}');">
   <div class="container">
     <div class="row">
-      <div class="col-md-7 offset-md-4">
+      <div class="col-md-6 offset-md-5">
         <div class="brand text-left">
           <img src="{{ asset('img/cba-logo.png') }}" style="max-width:400px">
           <h1>Cell Sorter</h1>
-          <h3>CBA Usach pone a disposición el servicio de cell sorting mediante un Cell Sorter BD FACSMelody. El equipo cuenta con 3 láser (488 nm, 640 nm y 405 nm) y detectores para 9 colores de fluorescencia. Este equipo permite la separación celular con una alta pureza de manera rápida y eficiente. </h3>
+          <h4>CBA Usach pone a disposición el servicio de cell sorting mediante un Cell Sorter BD FACSMelody. El equipo cuenta con 3 láser (488 nm, 640 nm y 405 nm) y detectores para 9 colores de fluorescencia. Este equipo permite la separación celular con una alta pureza de manera rápida y eficiente. </h4>
         </div>
       </div>
     </div>
