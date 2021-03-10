@@ -39,7 +39,9 @@ class AppointmentController extends Controller
         $appointment->attendant_user_id =   $user->id ?? null;
         $appointment->save();
 
-        Mail::to($appointment->attendant_email)->send(new AppointmentRequested($appointment));
+        Mail::to($appointment->attendant_email)
+            ->bcc(config('mail.bcc_copy'))
+            ->send(new AppointmentRequested($appointment));
 
         return view('appointment.success', compact('appointment'));
        // }

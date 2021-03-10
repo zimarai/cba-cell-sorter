@@ -29,7 +29,7 @@ class AppointmentRequested extends Mailable
      */
     public function build()
     {
-        return $this->from('no-reply@cbausach.science')
+        return $this
         ->subject("Reserva ".$this->appointment->reservation_code." - CBA USACH Cell Sorter")
         ->view('emails.appointmentRequested');
     }
