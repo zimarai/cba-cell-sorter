@@ -13,9 +13,14 @@
               <td>Hora</td>
               <td>{{ Config::get('app.slots.'.strtolower($appointment->slot).'.start') }} a 
               {{ Config::get('app.slots.'.strtolower($appointment->slot).'.end') }} hrs.</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <td>Dependencias</td>
-              <td>xxxxxxxxxxxx, Santiago.</td>
+              <td>Laboratorio de Inmunología CBA USACH</td>
+            </tr>
+            <tr>
+              <td>Dirección</td>
+              <td>Av. Libertador Bernardo O'Higgins #3363, edificio Eduardo Morales Santos, tercer piso, Santiago.</td>
             </tr>
             <tr>
               <td>Nombre</td>
