@@ -7,38 +7,8 @@
         <h3>Jornada agendada exitósamente</h3>
         <p>Los datos de esta reserva han sido enviados a tu correo.<br>Tu código de reserva es:</p>
         <h2 class="big-code">{{$appointment->reservation_code}}</h2>
-        <table class="table table-bordered table-striped text-left">
-          <tbody>
-            <tr>
-              <td>Día</td>
-              <td>{{ $appointment->scheduled_date->format('d-m-Y') }}</td>
-            </tr>
-            <tr>
-              <td>Hora</td>
-              <td>{{ Config::get('app.slots.'.strtolower($appointment->slot).'.start') }} a 
-              {{ Config::get('app.slots.'.strtolower($appointment->slot).'.end') }} hrs.</td>
-            </tr>
-            <tr>
-              <td>Dependencias</td>
-              <td>Laboratorio de Inmunología CBA USACH</td>
-            </tr>
-            <tr>
-              <td>Dirección</td>
-              <td>Av. Libertador Bernardo O'Higgins #3363, edificio Eduardo Morales Santos, tercer piso, Santiago.</td>
-            </tr>
-            <tr>
-              <td>Nombre</td>
-              <td>{{ $appointment->attendant_name }}</td>
-            </tr>
-            <tr>
-              <td>Email</td>
-              <td>{{ $appointment->attendant_email }}</td>
-            </tr>
-            <tr>
-              <td>Institución</td>
-              <td>USACH</td>
-            </tr>
-          </tbody>
+        <table class="table table-bordered table-striped table-sm text-left">
+          @include('includes.appointmentDetail')
         </table>
         <p>Guarda tu código de reserva, ya que con él podrás modificar tu cita en caso de que lo necesites.
         <br>Recuerda llegar puntualmente al laboratorio. <br>Si no puedes asistir por favor comunícate con nosotros 
