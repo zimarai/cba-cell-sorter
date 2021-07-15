@@ -42,40 +42,35 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
+                    
+                    
                     @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Revisar mis reservas</a>
+                      <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}"><i class="material-icons">lock</i> Iniciar sesión</a>
                         </li>
-                        @if(Route::has('register'))
-
-                            <li class="nav-item">
-                                <a class="nav-link btn btn-white btn-raised btn-round " style="color:grey"
-                                    href="agendar">
-                                    <i class="material-icons">timer</i> Agendar</a>
-                            </li>
-                            {{--
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">
-                            <i class="material-icons">account_circle</i>Registrarme</a>
-                            </li>
-                            --}}
-                        @endif
                     @else
+                        @if(Auth::user()->role == 'ADMIN')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin') }}"><i class="material-icons">settings</i> Admin</a>
+                            </li>
+                        @endif
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}"><i
-                                    class="material-icons">user</i> {{ Auth::user()->name }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                <i class="material-icons">key</i> Cerrar sesión</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                class="d-none">
+                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="material-icons">lock</i>  Cerrar sesión</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
                         </li>
-
                     @endguest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('cancelar') }}"><i class="material-icons">highlight_off</i> Anular mi reserva</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-white btn-raised btn-round " style="color:grey"
+                            href="agendar">
+                            <i class="material-icons">timer</i> Agendar</a>
+                    </li> 
+                    
                 </ul>
             </div>
         </div>

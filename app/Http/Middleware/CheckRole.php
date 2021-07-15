@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Middleware;
+use App\Providers\RouteServiceProvider;
 
 use Closure;
 
-class AdminRole
+class CheckRole
 {
     /**
      * Handle the incoming request.
@@ -14,10 +15,10 @@ class AdminRole
      * @param  string  $role
      * @return mixed
      */
-    public function handle($request, Closure $next, $role)
+    public function handle($request, Closure $next)
     {
-        if (! $request->user()->hasRole('ADMIN')) {
-          redirect(RouteServiceProvider::HOME);
+        if ($request->user() == null || $request->user()->role !== 'ADMIN') {
+          return redirect(RouteServiceProvider::HOME);
         }
         return $next($request);
     }

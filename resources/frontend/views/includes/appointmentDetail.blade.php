@@ -24,7 +24,7 @@
     <td>Institución</td>
     <td>
       @if ($appointment->organization_type === 2)
-        {{ $appointment->organization_name }}
+        Otro organismo
       @else
         USACH
       @endif

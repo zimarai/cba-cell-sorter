@@ -30,7 +30,13 @@ class CreateAppointmentTable extends Migration
             $table->integer('total_antibodies')->nullable();
             $table->string('fluorophores');
             $table->char('reservation_code',6);
-            $table->enum('status', ['PENDING', 'CANCELLED', 'DELETED', 'COMPLETED', 'UNUSED'])->default('PENDING');
+            $table->enum('status', [
+                'PENDING', 
+                'CANCELLED', // Usuario lo cancela
+                'DELETED',  // Admin lo elimina
+                'COMPLETED', 
+                'UNUSED'
+            ])->default('PENDING');
 
             $table->foreignId('attendant_user_id')->nullable()->constrained('users')->onDelete('set null');
 

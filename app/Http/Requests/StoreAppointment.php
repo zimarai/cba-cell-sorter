@@ -21,7 +21,6 @@ class StoreAppointment extends FormRequest
     }
 
     public function withValidator($validator) {
-        ;
         $validator->after(function ($validator){
             $exist = Appointment::where(
                     'slot', 

@@ -7,10 +7,6 @@
     <div class="row justify-content-center">
       <div class="col-md-4 col-sm-6">
         <div class="card">
-        <div class="card-header card-header-primary text-center">
-                  <h4 class="card-title">CBA USACH Cell Sorter</h4>
-                  <p>Ingresa tu correo y contraseña</p>
-                </div>
           <div class="card-body">
             <form method="POST" action="{{ route('login') }}">
               @csrf
