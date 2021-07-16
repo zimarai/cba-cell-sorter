@@ -43,7 +43,7 @@ class Appointment extends Model
      */
     protected $attributes = [
         'organization_type' => 1,
-        'status' => 'PENDING',
+        'status' => 'ENTERED',
     ];
 
     public function user()
