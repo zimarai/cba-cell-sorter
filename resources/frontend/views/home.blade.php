@@ -24,8 +24,7 @@
             <i class="material-icons first">sentiment_satisfied_alt</i>
           </div>
           <h3>Fácil de usar</h3><hr>
-          <p>With <b>BD FACSChorus™ Software</b>, researchers are guided throughout the entire cell sorting process
-            using advanced automation technology...</p>
+          <p>El software <b>BD FACSChorus</b> permite separar células utilizando tecnología de automatización avanzada.</p>
         </div>
       </div>
     </div>
@@ -36,8 +35,7 @@
             <i class="material-icons second">important_devices</i>
           </div>
           <h3>Gran performance</h3><hr>
-            <p>Simplified operation does not mean reduced performance. The BD FACSMelody System features excellent
-              sensitivity for accurate resolution...</p>
+            <p>El sistema <b>BD FACSMelody</b> presenta una excelente sensibilidad para una resolución precisa.</p>
         </div>
       </div>
     </div>
@@ -48,8 +46,7 @@
             <i class="material-icons third">verified_user</i>
           </div>
           <h3>Seguro</h3><hr>
-          <p>Simplified operation does not mean reduced performance. The BD FACSMelody System features excellent
-            sensitivity for accurate resolution of low density cell markers...</p>
+          <p>El sistema <b>BD FACSMelody</b> presenta una excelente sensibilidad para una resolución precisa de marcadores de células de baja afinidad.</p>
         </div>
       </div>
     </div>
